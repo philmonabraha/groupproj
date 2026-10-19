@@ -295,7 +295,7 @@ a:hover {
 }
 
 /* Projects Section - TO BE ENHANCED WITH GRID */
-/* Filter Buttons - Week 7 Addition */
+/* Filter Buttons - Week 6 Addition */
 .filter-buttons {
     display: flex;
     justify-content: center;
@@ -482,7 +482,7 @@ a:hover {
     resize: vertical;
 }
 
-/* Form Validation Styles - Week 7 Addition */
+/* Form Validation Styles - Week 6 Addition */
 .error-message {
     color: #dc2626;
     font-size: 0.875rem;
@@ -559,3 +559,29 @@ a:hover {
 .mb-1 { margin-bottom: var(--spacing-sm); }
 .mb-2 { margin-bottom: var(--spacing-md); }
 .mb-3 { margin-bottom: var(--spacing-lg); }
+/* Layout and mobile navigation for the migrated portfolio. */
+section[id] { scroll-margin-top: 90px; }
+#navbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.nav-menu { display: flex; gap: .5rem; }
+.nav-menu li { margin-left: 0; }
+.nav-link.active { background: rgba(255,255,255,.2); }
+.nav-toggle { border: 0; padding: 0; background: transparent; flex-shrink: 0; }
+.hero { display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.skill-card, .project-card { margin-bottom: 0; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.form-group-full { grid-column: 1 / -1; }
+.contact-form .btn-primary { background: var(--primary-color); color: white; }
+.project-card:focus-within .project-overlay { opacity: 1; }
+:focus-visible { outline: 3px solid #d69e2e; outline-offset: 4px; }
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--secondary-color); padding: 1rem; }
+  .nav-menu.active { display: flex; flex-direction: column; }
+  .nav-menu a { display: block; }
+  .about-grid, .skills-grid, .projects-grid, .form-grid { grid-template-columns: 1fr; }
+  .container { padding: 0 1rem; }
+}
